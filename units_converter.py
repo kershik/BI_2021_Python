@@ -1,3 +1,4 @@
+
 amount = int(input("Amount:"))
 from_unit = input("From (s, min, h, d, wk):")
 to_unit = input("To (s, min, h, d, wk):")
@@ -49,5 +50,6 @@ from_unit_dict = {
     "d": d,
     "wk": wk
 }
+ 
 
 print(from_unit_dict[from_unit][to_unit](amount))
