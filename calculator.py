@@ -16,5 +16,3 @@ else:
         print(a**b)
     else:
         print("Your calculator isn't smart enough for this")
-
-
