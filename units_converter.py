@@ -50,4 +50,6 @@ from_unit_dict = {
     "wk": wk
 }
 
-print(from_unit_dict[from_unit][to_unit](amount))
+
+
+print(str(from_unit_dict[from_unit][to_unit](amount)) + " " + to_unit)
