@@ -13,21 +13,22 @@ def subtests(cases):
 
 class TestLinkedList(unittest.TestCase):
 
+
     def setUp(self):
         self.items = LinkedList()
         for i in range(10, 30):
             self.items.add(i)
         for i in range(10, 20):
             self.items.add(i)
-        self.control_list = list(range(10, 30)) + list(range(10,20))
+        self.control_list = list(range(10, 30)) + list(range(10, 20))
 
     def test_contains(self):
         self.assertIn(12, self.items)
         self.assertFalse(100 in self.items)
     
-    @subtests(cases = (
-        [1], [], [5, 5, 5], 
-        list(range(100)), 
+    @subtests(cases=(
+        [1], [], [5, 5, 5],
+        list(range(100)),
         list(range(9, 0, -1))
         ))
     def test_extend(self, case):
@@ -36,7 +37,7 @@ class TestLinkedList(unittest.TestCase):
         self.control_list.extend(case)
         self.assertEqual(extended_list, self.control_list)
 
-    @subtests(cases = (
+    @subtests(cases=(
             ([5, 5], 3),
             (list(range(100)), 1)
         ))
@@ -46,11 +47,12 @@ class TestLinkedList(unittest.TestCase):
         self.control_list[case[-1]:case[-1]] = case[0]
         self.assertEqual(extended_list, self.control_list)
 
-    @subtests(cases = (None, 2, 5, 10, 15))
+    @subtests(cases=(None, 2, 5, 10, 15))
     def test_pop(self, case):
         pop_el = self.items.pop(case) if case is not None else self.items.pop()
         pop_list = self.items.to_list()
-        pop_control = self.control_list.pop(case) if case is not None else self.control_list.pop()
+        pop_control = self.control_list.pop(case) if case is not None \
+            else self.control_list.pop()
         self.assertEqual(pop_list, self.control_list)
         self.assertEqual(pop_el, pop_control)
 
