@@ -37,7 +37,7 @@ class LinkedList:
                 return True
             current = current.get_next()
         return False
-    
+
     def to_list(self):
         return [self[i] for i in range(len(self))]
 
@@ -79,7 +79,7 @@ class LinkedList:
                 current = new_item
             current.set_next(new_tail)
         return self
-    
+
     def pop(self, index=None):
         self.__len -= 1
         current = self.__head
@@ -126,4 +126,3 @@ if __name__ == "__main__":
     items.add(12)
     items.add(13)
     items.add(14)
-

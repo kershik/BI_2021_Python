@@ -11,8 +11,8 @@ def subtests(cases):
         return wrapper
     return decorator
 
-class TestLinkedList(unittest.TestCase):
 
+class TestLinkedList(unittest.TestCase):
 
     def setUp(self):
         self.items = LinkedList()
@@ -25,7 +25,7 @@ class TestLinkedList(unittest.TestCase):
     def test_contains(self):
         self.assertIn(12, self.items)
         self.assertFalse(100 in self.items)
-    
+
     @subtests(cases=(
         [1], [], [5, 5, 5],
         list(range(100)),
